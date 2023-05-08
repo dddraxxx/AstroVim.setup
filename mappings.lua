@@ -4,9 +4,10 @@ return {
         -- second key is the lefthand side of the map
         -- mappings seen under group name "Buffer"
         ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-        ["<leader>bs"] = { "<cmd>so<cr>", desc = "source file"}
+        ["<leader>bs"] = { "<cmd>so<cr>", desc = "source file"},
+        ["<C-a>"] = {"ggVG", desc = "select all"},
     },
     i = {
-        ["<C-f>"] = {function() require("copilot.suggestion").accept_line() end, desc="accept_line"}
+        ["<C-f>"] = {function() require("copilot.suggestion").accept_line() end, desc="accept_line"},
     }
 }
