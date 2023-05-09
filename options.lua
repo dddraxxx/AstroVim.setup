@@ -1,5 +1,5 @@
 vim.cmd[[set relativenumber]]
-
+vim.cmd[[set noswapfile]]
 -- vim.cmd[[
 --   let g:clipboard = {
 --   \   'name': 'WslClipboard',
