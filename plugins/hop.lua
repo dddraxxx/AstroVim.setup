@@ -10,7 +10,7 @@ return {
         keys = {
             {'gw', '<cmd>HopWord<cr>', desc='hop word'},
             {'gs', '<cmd>HopChar1<cr>', desc='hop char'},
-            {'gl', '<cmd>HopVertical<cr>', desc='hop line'},
+            {'g;', '<cmd>HopVertical<cr>', desc='hop line'},
         }
     }
 }

@@ -6,9 +6,12 @@ local maps = {
         ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
         ["<leader>bs"] = { "<cmd>so<cr>", desc = "source file"},
         ["<C-a>"] = {"ggVG", desc = "select all"},
+        ["gl"] = {"$", desc = "go to end of line"}
     },
     i = {
-        ["<C-f>"] = {function() require("copilot.suggestion").accept_line() end, desc="accept_line"},
+        ["<C-e>"] = {function() require("copilot.suggestion").accept_line() end, desc="accept_line"},
+        ["<C-l>"] = {function() require("copilot.suggestion").accept_word() end, desc="accept_word"},
+        ["<C-y>"] = {function() require("copilot.suggestion").accept() end, desc="accept all"}
     },
     v = {}
 }
@@ -19,8 +22,8 @@ local is_available = utils.is_available
 
 if is_available "Comment.nvim" then
     maps.n["<leader>;"] = {
-        function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
-        desc = "Comment line",
+    function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+    desc = "Comment line",
     }
     maps.v["<leader>;"] =
     { "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>", desc = "Toggle comment line" }
